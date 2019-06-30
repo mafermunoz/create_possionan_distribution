@@ -5,7 +5,6 @@ do
     for i in {1..3}
       do
           sbatch submit_dist.sh  $l $k $i
-        fi
       done
     done
   done
