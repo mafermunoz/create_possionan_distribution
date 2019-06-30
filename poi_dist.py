@@ -15,7 +15,10 @@ def main(nmap,energy_range,year):
     total_sec=np.load('/beegfs/dampe/users/mmunozsa/ani_random_average/ani_avg_method/total_seconds_peryear.npy')
 
     x=rate[year-1,energy_range-1]/total_sec[year-1]
-    s = np.random.poisson(x,int(pointing_history[year-1]))
+    s = np.random.poisson(x,int(total_sec[year-1]))
+    while (s.sum()<rate[year-1,energy_range-1])
+        s = np.random.poisson(x,int(total_sec[year-1]))
+
     np.save('../pois_dist_year_'+str(year)+"_energy_bin"+str(energy_range)+'_nmap_'+str(nmap)+'.npy')
 
 if __name__ == '__main__':
