@@ -19,7 +19,7 @@ def main(nmap,energy_range,year):
     while (s.sum()<rate[year-1,energy_range-1]):
         s = np.random.poisson(x,int(total_sec[year-1]))
 
-    np.save('../pois_dist_year_'+str(year)+"_energy_bin"+str(energy_range)+'_nmap_'+str(nmap)+'.npy')
+    np.save('../pois_dist_year_'+str(year)+"_energy_bin"+str(energy_range)+'_nmap_'+str(nmap)+'.npy',s)
 
 if __name__ == '__main__':
         main(sys.argv[1],sys.argv[2],sys.argv[3])
