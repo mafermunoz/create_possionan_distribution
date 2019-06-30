@@ -11,8 +11,8 @@ def main(nmap,energy_range,year):
     energy_range=int(energy_range)##1,2,3
     year=int(year)
 
-    rate=np.load(' ../../ani_random_average/ani_avg_method/rate_ps_year_energybin.npy')
-    total_sec=np.load(' ../../ani_random_average/ani_avg_method/total_seconds_peryear.npy')
+    rate=np.load('/beegfs/dampe/users/mmunozsa/ani_random_average/ani_avg_method/rate_ps_year_energybin.npy')
+    total_sec=np.load('/beegfs/dampe/users/mmunozsa/ani_random_average/ani_avg_method/total_seconds_peryear.npy')
 
     x=rate[year-1,energy_range-1]/total_sec[year-1]
     s = np.random.poisson(x,int(pointing_history[year-1]))
