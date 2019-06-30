@@ -6,6 +6,7 @@ do
       do
           OUTF='../pois_dist_year_'$k"_energy_bin"$i'_nmap_'$l'.npy'
           if [ ! -f ${OUTF} ]; then
+            echo $l $k $i
             sbatch submit_dist.sh  $l $k $i
           fi
       done
