@@ -4,7 +4,10 @@ do
   do
     for i in {1..3}
       do
-          sbatch submit_dist.sh  $l $k $i
+          OUTF='../pois_dist_year_'$k"_energy_bin"$i'_nmap_'$l'.npy'
+          if [ ! -f ${OUTF} ]; then
+            sbatch submit_dist.sh  $l $k $i
+          fi
       done
     done
   done
